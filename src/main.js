@@ -1,24 +1,21 @@
-import Cliente from "./cliente.js";
-import Impuestos from "./impuesto.js";
+// Importando Cliente e Impuesto
+import Cliente from "./Cliente.js"
+import Impuesto from "./Impuesto.js"
 
+function main() {
+	// Creando nuevo Impuesto
+	const impuesto1 = new Impuesto()
+	impuesto1.montoBrutoAnual = 100000
+	impuesto1.deducciones = 5000
 
-const impuesto1 = new Impuestos()
-impuesto1.montoBrutoAnual = 1000000
-impuesto1.deducciones = 180000
+	// Creando nuevo Cliente
+	const cliente1 = new Cliente()
+	cliente1.nombre = "Kika"
+	cliente1.impuesto = impuesto1
 
-const impuesto2 = new Impuestos()
-impuesto2.montoBrutoAnual = 500000
-impuesto2.deducciones = 80000
+	// Mostrando cliente1 y el calculo de su impuesto
+	console.log(cliente1)
+	cliente1.calcularImpuesto()
+}
 
-const cliente1 = new Cliente()
-cliente1.nombre = 'Maria'
-cliente1.impuesto = impuesto1
-
-const cliente2 = new Cliente()
-cliente2.nombre = 'Jacove'
-cliente2.impuesto = impuesto2
-
-console.log(cliente1)
-console.log(cliente2)
-cliente1.calcularImpuesto()
-cliente2.calcularImpuesto()
+main()
